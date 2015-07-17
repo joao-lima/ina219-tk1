@@ -12,7 +12,7 @@ int main(int argc, char** argv)
 	struct timeval t0;
 	ina219.begin();
 
-	fprintf(stdout, "Timestamp;Current_mA;Voltage;Watts");
+	fprintf(stdout, "Timestamp;Current_mA;Voltage;Watts\n");
 	do{
 		float shuntvoltage = 0;
 		float busvoltage = 0;
