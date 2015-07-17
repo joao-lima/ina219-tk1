@@ -12,6 +12,7 @@ int main(int argc, char** argv)
 	struct timeval t0;
 	ina219.begin();
 
+	fprintf(stdout, "Timestamp;Watts;Current_mA;Voltage");
 	do{
 		float shuntvoltage = 0;
 		float busvoltage = 0;
@@ -30,7 +31,7 @@ int main(int argc, char** argv)
 		//fprintf(stdout, "Bus Voltage:   %.3f V\n", busvoltage);
 		//fprintf(stdout, "Current:       %.3f mA\n", current_mA);
 		//fprintf(stdout, "Watts:         %.3f W\n", (current_mA/1000)*busvoltage);
-		fprintf(stdout, "%.0f %6.3f %6.3f %6.3f\n",
+		fprintf(stdout, "%.0f;%6.3f;%6.3f;%6.3f\n",
 			t0.tv_sec*1e6+t0.tv_usec, 
 			(current_mA/1000)*busvoltage,
 			current_mA, busvoltage);
