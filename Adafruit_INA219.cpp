@@ -399,7 +399,7 @@ void
 		fprintf(stdout, "%s: error opening '%s' (%d)\n", __PRETTY_FUNCTION__, devbusname, device);
 		exit(-1);
 	}
-	fprintf(stdout, "%s: opened '%s'\n", __PRETTY_FUNCTION__, devbusname);
+	//fprintf(stdout, "%s: opened '%s'\n", __PRETTY_FUNCTION__, devbusname);
 	if(ioctl(device, I2C_SLAVE, ina219_i2caddr) < 0){
 		fprintf(stdout, "%s: error opening slave 0x%02x INA219\n", __PRETTY_FUNCTION__, ina219_i2caddr);
 		close(device);
